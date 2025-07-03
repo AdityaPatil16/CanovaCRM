@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Home.css";
+import "./home.css";
 import { FaHome, FaUser, FaCalendarAlt, FaUsers } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
