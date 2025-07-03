@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import "./Profile.css";
+import "./profile.css";
 import { FaHome, FaUser, FaCalendarAlt, FaUsers } from "react-icons/fa";
 
 const Profile = () => {
