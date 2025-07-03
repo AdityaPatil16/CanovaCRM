@@ -1,16 +1,27 @@
 const mongoose = require('mongoose');
 
 const leadEntrySchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  phone: String,
+  name: String,
   email: String,
-  date: String,
-  language: String,
-  location: String,
-  type: { type: String, enum: ['hot', 'warm', 'cold'], default: 'warm' }, // ✅ Add this
-  assignedTo: { type: mongoose.Schema.Types.ObjectId, ref: 'Employee', default: null },
-  status: { type: String, enum: ['unassigned', 'assigned', 'closed'], default: 'unassigned' },
-  uploadedBy: String
+  phone: String,
+  date: Date,
+  assignedTo: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Employee",
+  },
+  status: {
+    type: String,
+    enum: ["assigned", "Ongoing", "Closed"],
+    default: "assigned",
+  },
+  type: {
+    type: String,
+    enum: ["Hot", "Warm", "Cold"],
+    default: "Warm",
+  },
+  scheduledDate: String,
+  scheduledTime: String,
 }, { timestamps: true });
 
-module.exports = mongoose.model('LeadEntry', leadEntrySchema);
+// ✅ Prevent the OverwriteModelError
+module.exports = mongoose.models.LeadEntry || mongoose.model("LeadEntry", leadEntrySchema);

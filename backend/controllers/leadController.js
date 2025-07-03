@@ -1,6 +1,6 @@
 const fs = require("fs");
 const csv = require("csv-parser");
-const LeadEntry = require("../models/leadEntry");
+const LeadEntry = require("../models/LeadEntry");
 const Employee = require("../models/employee");
 const Activity = require("../models/activity");
 

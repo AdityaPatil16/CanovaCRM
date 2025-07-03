@@ -5,7 +5,7 @@ const path = require("path");
 const fs = require("fs");
 
 const leadController = require("../controllers/leadController");
-const LeadEntry = require("../models/leadEntry");
+const LeadEntry = require("../models/LeadEntry");
 
 // ✅ Ensure 'uploads' folder exists
 const uploadDir = "uploads";
