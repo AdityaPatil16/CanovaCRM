@@ -1,5 +1,5 @@
-const Employee = require("../models/employee");
-const LeadEntry = require("../models/leadEntry");
+const Employee = require("../models/Employee");
+const LeadEntry = require("../models/LeadEntry");
 
 // 🚀 Get employee stats (assigned & closed leads)
 exports.getEmployeeStats = async (req, res) => {

@@ -1,5 +1,5 @@
-const Employee = require("../models/employee");
-const LeadEntry = require("../models/leadEntry");
+const Employee = require("../models/Employee");
+const LeadEntry = require("../models/LeadEntry");
 
 exports.getDashboardStats = async (req, res) => {
   try {

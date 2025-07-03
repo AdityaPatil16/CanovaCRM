@@ -1,7 +1,7 @@
 const fs = require("fs");
 const csv = require("csv-parser");
 const LeadEntry = require("../models/LeadEntry");
-const Employee = require("../models/employee");
+const Employee = require("../models/Employee");
 const Activity = require("../models/activity");
 
 // ✅ Get All Lead Entries
