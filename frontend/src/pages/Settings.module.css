@@ -1,0 +1,207 @@
+/* === Layout and Sidebar (from Dashboard) === */
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f6fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  width: 100vw;
+  overflow: hidden; /* prevent horizontal scrollbar */
+}
+
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background-color: #D9D9D9;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.logo span {
+  color: #0003D0;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navList li {
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navList li:hover {
+  background-color: #e4e4e4;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  width: 100%;
+}
+
+.active .navLink {
+  background-color: #D9D9D9;
+  color: #000;
+  font-weight: 600;
+}
+
+.profileLabel {
+  margin-top: auto;
+  font-size: 14px;
+  color: #333;
+  padding-top: 20px;
+  border-top: 1px solid #aaa;
+}
+
+.disabled {
+  color: #D9D9D9;
+  pointer-events: none;
+}
+
+/* === Main Content === */
+.mainContent {
+
+  flex: 1;
+  padding: 32px 48px; /* increased padding for better layout */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.headerBar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 10px;
+  gap: 8px;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+  width: 180px;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.breadcrumb {
+  color: #888;
+  font-size: 0.95rem;
+}
+
+/* === Settings Form Panel === */
+.settingsCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+}
+
+.settingsCard h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  border-bottom: 2px solid #ccc;
+  width: fit-content;
+  padding-bottom: 6px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+
+.formGroup label {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.formGroup input {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.saveBtn {
+  background-color: #D9D9D9;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* === Pagination === */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.currentPage {
+  background: #000;
+  color: white;
+  font-weight: bold;
+}
+
+.noData {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}

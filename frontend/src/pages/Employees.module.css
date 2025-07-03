@@ -1,0 +1,330 @@
+/* === Layout === */
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f6fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* === Sidebar === */
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background-color: #D9D9D9;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ccc;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.crmColor {
+  color: #0003D0;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navList li {
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navList li:hover {
+  background-color: #e4e4e4;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  width: 100%;
+}
+
+.activeNav .navLink {
+  background-color: #D9D9D9;
+  color: #000;
+  font-weight: 600;
+}
+
+.profileLabel {
+  margin-top: auto;
+  font-size: 14px;
+  color: #333;
+  padding-top: 20px;
+  border-top: 1px solid #aaa;
+}
+
+/* === Main Content === */
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f5f6fa;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.breadcrumb {
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.headerBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* === Page Header === */
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.addBtn {
+  background-color: #D9D9D9;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+/* === Table === */
+.employeeTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.employeeTable th,
+.employeeTable td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.employeeTable th {
+  background: #f0f0f0;
+  color: #22223b;
+  font-weight: 600;
+}
+
+.employeeTable tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.userCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.empName {
+  font-weight: 500;
+  color: #000;
+}
+
+.empEmail {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.status {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.activeBadge {
+  color: #12f401;
+}
+
+.inactive {
+  color: #ff0000;
+}
+
+/* === Action Buttons === */
+.actionBtn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* === Dropdown Menu === */
+.menuWrapper {
+  position: relative;
+}
+
+.dropdownMenu {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 8px 0;
+  z-index: 999;
+  top: 25px;
+  right: 0;
+}
+
+.dropdownMenu button {
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 8px 16px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dropdownMenu button:hover {
+  background-color: #f0f0f0;
+}
+
+/* === Modal === */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  width: 550px;
+  max-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.closeModalBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modalBody input,
+.modalBody select {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.saveBtn {
+  background-color: #D9D9D9;
+  color: #000000;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* === Pagination === */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.pageNumberBtn,
+.currentPage {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.currentPage {
+  background-color: #000;
+  color: #fff;
+}
+.pageNumberBtn:hover {
+  background-color: #e0e0e0;
+}
+
+.noData {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
