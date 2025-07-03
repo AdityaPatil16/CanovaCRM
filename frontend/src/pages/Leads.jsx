@@ -19,7 +19,7 @@ export default function Leads() {
 
   const fetchLeadEntries = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/leads");
+      const res = await fetch("${import.meta.env.VITE_API_BASE_URL}/api/leads");
       if (res.ok) {
         const data = await res.json();
         setLeadData(data);
@@ -106,7 +106,7 @@ export default function Leads() {
 
     try {
       const xhr = new XMLHttpRequest();
-      xhr.open("POST", "http://localhost:5000/api/leads/upload", true);
+      xhr.open("POST", "${import.meta.env.VITE_API_BASE_URL}/api/leads/upload", true);
 
       xhr.upload.onprogress = (event) => {
         if (event.lengthComputable) {

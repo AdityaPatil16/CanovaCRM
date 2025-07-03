@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import "./schedule.css";
-import filterIcon from "../assets/filter.png"; // ✅ adjust path if needed
+import filterIcon from "../assets/filter.png"; 
 
 const Schedule = () => {
   const [leads, setLeads] = useState([]);
@@ -24,11 +24,11 @@ const Schedule = () => {
 
       try {
         const res = await fetch(
-          `http://localhost:5000/api/leads/scheduled?employeeId=${employee._id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/leads/scheduled?employeeId=${employee._id}`
         );
         const data = await res.json();
 
-        // ✅ Fix: safely compare assignedTo._id or string
+        
         const filtered = data.filter(
           (lead) =>
             (typeof lead.assignedTo === "string" &&

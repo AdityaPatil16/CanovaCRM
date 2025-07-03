@@ -34,7 +34,7 @@ const Leads = () => {
     if (!employee) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/leads/employee/${employee._id}`);
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/leads/employee/${employee._id}`);
       const data = await res.json();
       setLeads(data);
 
@@ -53,7 +53,7 @@ const Leads = () => {
 
   const updateLead = async (id, updates) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/leads/update/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/leads/update/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updates),

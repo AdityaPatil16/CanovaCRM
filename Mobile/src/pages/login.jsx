@@ -16,7 +16,7 @@ const Login = () => {
 
     try {
       // Authenticate using email + lastName as password
-      const res = await axios.post("http://localhost:5000/api/employees/login", {
+      const res = await axios.post("${import.meta.env.VITE_API_BASE_URL}/api/employees/login", {
         email,
         password, // 👈 lastName
       });
@@ -40,14 +40,14 @@ const Login = () => {
       localStorage.setItem(tabKey, "open");
 
       // ✅ Mark Check-in
-      await axios.post("http://localhost:5000/api/attendance/checkin", {
+      await axios.post("${import.meta.env.VITE_API_BASE_URL}/api/attendance/checkin", {
         employeeId,
         date: currentDate,
         time: currentTime,
       });
 
       // ✅ Set employee status to Active
-      await axios.post("http://localhost:5000/api/employees/status", {
+      await axios.post("${import.meta.env.VITE_API_BASE_URL}/api/employees/status", {
         employeeId,
         status: "Active",
       });

@@ -44,7 +44,7 @@ const Home = () => {
 
   const fetchAttendance = async (employeeId) => {
     try {
-      const res = await axios.get("http://localhost:5000/api/attendance/today", {
+      const res = await axios.get("${import.meta.env.VITE_API_BASE_URL}/api/attendance/today", {
         params: { employeeId, date: currentDate },
       });
       if (res.data) {
@@ -58,7 +58,7 @@ const Home = () => {
 
   const fetchBreaks = async (employeeId) => {
     try {
-      const res = await axios.get("http://localhost:5000/api/attendance/breaks", {
+      const res = await axios.get("${import.meta.env.VITE_API_BASE_URL}/api/attendance/breaks", {
         params: { employeeId },
       });
 
@@ -81,7 +81,7 @@ const Home = () => {
 
   const checkActiveBreak = async (employeeId) => {
     try {
-      const res = await axios.get("http://localhost:5000/api/attendance/breaks", {
+      const res = await axios.get("${import.meta.env.VITE_API_BASE_URL}/api/attendance/breaks", {
         params: { employeeId },
       });
 
@@ -102,13 +102,13 @@ const Home = () => {
     const empId = employee.id || employee._id;
 
     try {
-      await axios.post("http://localhost:5000/api/attendance/break", {
+      await axios.post("${import.meta.env.VITE_API_BASE_URL}/api/attendance/break", {
         employeeId: empId,
         date: currentDate,
         isStarting: newStatus,
       });
 
-      await axios.post("http://localhost:5000/api/employees/status", {
+      await axios.post("${import.meta.env.VITE_API_BASE_URL}/api/employees/status", {
         employeeId: empId,
         status: newStatus ? "Inactive" : "Active",
       });
@@ -121,7 +121,7 @@ const Home = () => {
 
   const fetchActivities = async (employeeId) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/activity/${employeeId}`);
+      const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/activity/${employeeId}`);
       setActivities(res.data || []);
     } catch (err) {
       console.error("❌ Failed to fetch activities:", err);

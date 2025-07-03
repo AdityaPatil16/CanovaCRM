@@ -23,7 +23,7 @@ export default function Employees() {
   const employeesPerPage = 8;
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/employees/stats")
+    fetch("${import.meta.env.VITE_API_BASE_URL}/api/employees/stats")
       .then((res) => res.json())
       .then((data) => {
         const enhanced = data.map((emp) => ({
@@ -52,7 +52,7 @@ export default function Employees() {
     if (!firstName || !lastName || !email || !location || !language)
       return alert("Please fill in all fields.");
 
-    fetch("http://localhost:5000/api/employees", {
+    fetch("${import.meta.env.VITE_API_BASE_URL}/api/employees", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newEmployee),
@@ -94,7 +94,7 @@ export default function Employees() {
   };
 
   const handleEditSave = () => {
-    fetch(`http://localhost:5000/api/employees/${selectedEmployee._id}`, {
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/employees/${selectedEmployee._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(selectedEmployee),
@@ -110,7 +110,7 @@ export default function Employees() {
   const handleDelete = (id) => {
     if (!window.confirm("Are you sure you want to delete this employee?")) return;
 
-    fetch(`http://localhost:5000/api/employees/${id}`, {
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/employees/${id}`, {
       method: "DELETE",
     })
       .then((res) => {

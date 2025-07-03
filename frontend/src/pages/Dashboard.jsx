@@ -55,7 +55,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/dashboard/stats");
+        const res = await axios.get("${import.meta.env.VITE_API_BASE_URL}/api/dashboard/stats");
         const data = res.data;
 
         setStats([
@@ -73,7 +73,7 @@ export default function Dashboard() {
 
     const fetchChartData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/dashboard/chart"); // Your backend chart endpoint
+        const res = await axios.get("${import.meta.env.VITE_API_BASE_URL}/api/dashboard/chart"); // Your backend chart endpoint
         const chartValues = res.data; // [12, 10, 15, 20, 8, 30, 25]
 
         const days = getPast7Days();
